@@ -17,8 +17,8 @@ const eslintConfig = [
       "standard",
       "plugin:tailwindcss/recommended",
       "prettier"
-    ]
-  }
+    ],
+  },
 ];
 
 export default eslintConfig;
