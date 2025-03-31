@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 
 
 export const metadata: Metadata = {
-  title: "Connect",
+  title: "CONNECT",
   description: "Video calling application",
   icons:{
     icon:'/icons/logo.svg'
