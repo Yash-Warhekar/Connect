@@ -3,6 +3,80 @@
 
 @custom-variant dark (&:is(.dark *));
 
+Calendar Styles
+.calendar-wrapper {
+  background: var(--dark-2);
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--dark-3);
+}
+
+.react-calendar {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: rgb(3, 2, 2);
+  font-size: 1rem;
+  font-weight: bolder;
+}
+
+.react-calendar__tile {
+  color: rgb(0, 0, 0);
+  padding: 1em 0.5em;
+  position: relative;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: var(--dark-3);
+  border-radius: 4px;
+}
+
+.react-calendar__tile--now {
+  background: var(--dark-4) !important;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.meeting-date {
+  background-color: #2563eb !important;
+  color: rgb(10, 5, 5) !important;
+  border-radius: 4px;
+  font-weight: bold;
+  position: relative;
+}
+
+.meeting-date:hover {
+  background-color: #a1afd4 !important;
+}
+
+.meeting-date abbr {
+  color: rgb(0, 0, 0) !important;
+}
+
+.meeting-date:hover {
+  background-color: #1982ff !important;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: var(--dark-3);
+  border-radius: 4px;
+}
+
+.react-calendar__navigation button {
+  color: rgb(14, 9, 9);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.react-calendar__month-view__weekdays {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

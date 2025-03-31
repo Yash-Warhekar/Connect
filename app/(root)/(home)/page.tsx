@@ -1,10 +1,24 @@
+'use client';
+
+import MeetingCalendar from '@/components/MeetingCalendar';
 import MeetingTypeList from '@/components/MeetingTypeList';
+import { useEffect, useState } from 'react';
 
 const Home = () => {
-  const now = new Date();
+  const [currentTime, setCurrentTime] = useState(new Date());
 
-  const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);
+  useEffect(() => {
+    // Update time every minute
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 60000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const time = currentTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+  const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(currentTime);
+
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
@@ -21,6 +35,10 @@ const Home = () => {
       </div>
 
       <MeetingTypeList />
+      <div className="mt-8 ">
+        <h2 className="mb-4 text-2xl font-bold">Meeting Calendar</h2>
+        <MeetingCalendar />
+      </div>
     </section>
   );
 };
